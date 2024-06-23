@@ -32,9 +32,8 @@ function Home() {
     const webapp = (window as any).Telegram?.WebApp.initDataUnsafe;
     // console.log("=========>webapp", webapp);
     if (webapp) {
-
       setUsername(webapp["user"]["username"]);
-      axios.post(`/earnings/add`, {username: webapp["user"]["username"]})
+      axios.post(`/earnings/add`, { username: webapp["user"]["username"] });
       dispatch(insertWallet(webapp["user"]["username"]));
       dispatch(getWallet(webapp["user"]["username"])).then(() => {
         setTap(tapState);
@@ -136,7 +135,9 @@ function Home() {
   return (
     <div className=" mt-8">
       <ToastContainer />
-      <TonConnectButton />
+      <div className="flex justify-center items-center">
+        <TonConnectButton />
+      </div>
       <div
         id="mainWindow"
         className="relative mt-8 flex flex-col items-center justify-center w-full h-[62vh] mb-9"
