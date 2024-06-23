@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import CountDate from "../component/CountDate";
 import ProgressBar from "../component/ProgressBar";
 import { dispatch, useSelector } from "../store";
 import soundEffect from "../../public/effect/water.wav";
+import { TonConnectButton, useTonAddress } from "@tonconnect/ui-react";
 import axios from "../utils/api";
 import {
   insertWallet,
@@ -16,6 +16,7 @@ import {
 } from "../store/reducers/wallet";
 function Home() {
   const audio = new Audio(soundEffect);
+  const address = useTonAddress();
   const usernameState = useSelector((state) => state.wallet.user?.username);
   const tokenState = useSelector((state) => state.wallet.user?.balance);
   const energyState = useSelector((state) => state.wallet.user?.energy);
@@ -105,6 +106,10 @@ function Home() {
   }, [username, remainedEnergy, limit]);
 
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!address) {
+      toast.warning("Wallet connection error. Please try again later.");
+      return;
+    }
     audio.play();
     if (remainedEnergy > 0 && token < 100000) {
       setScore(`+${tap}`);
@@ -131,7 +136,7 @@ function Home() {
   return (
     <div className=" mt-8">
       <ToastContainer />
-      <CountDate date={3} />
+      <TonConnectButton />
       <div
         id="mainWindow"
         className="relative mt-8 flex flex-col items-center justify-center w-full h-[62vh] mb-9"
@@ -140,7 +145,7 @@ function Home() {
           <div className="flex justify-center items-center">
             <img src="image/money-bag.png" alt="" className=" w-5 h-5" />
             <h3 className="text-xl font-bold text-[#fff243]">
-              &nbsp;&nbsp;Mystery laughter
+              &nbsp;&nbsp;Donald Trump
             </h3>
           </div>
           <h1 className="text-5xl text-white">
