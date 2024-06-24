@@ -19,16 +19,12 @@ export default function Boost() {
   const [treasure_date, setTreasure_date] = useState<moment.Moment | null>(
     treasure_date_state ? moment.utc(treasure_date_state) : null
   );
-  const [currentDateTime, setCurrentDateTime] = useState<moment.Moment>(
-    moment()
-  );
   const [diffDays, setDiffDays] = useState<number>(0);
   const [diffHours, setDiffHours] = useState<number>(0);
   const [diffMinutes, setDiffMinutes] = useState<number>(0);
   const [diffSeconds, setDiffSeconds] = useState<number>(0);
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentDateTime(moment());
       calculateDifference(moment());
     }, 1000);
 
@@ -44,7 +40,7 @@ export default function Boost() {
       setDiffSeconds(Math.floor(dateDiff % 60));
     }
   };
-  console.log(`${currentDateTime}---- ${diffDays}d ${diffHours}h ${diffMinutes}m ${diffSeconds}s`);
+  console.log(`${diffDays}d ${diffHours}h ${diffMinutes}m ${diffSeconds}s`);
   useEffect(() => {
     setToken(tokenState);
     setUsername(username_state);
