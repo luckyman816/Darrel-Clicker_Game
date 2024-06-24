@@ -177,7 +177,7 @@ export default function Boost() {
             <h1 className="text-white text-2xl">FREE</h1>
           </div>
           <div
-            className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center"
+            className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center hover:bg-indigo-400"
             onClick={handleFullEnergy}
           >
             <span className="flex justify-center items-center">Go ahead</span>
@@ -197,7 +197,7 @@ export default function Boost() {
             <h1 className="text-white text-2xl">FREE</h1>
           </div>
           <div
-            className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center"
+            className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center hover:bg-indigo-400"
             onClick={handleTreasureBox}
           >
             <span className="flex justify-center items-center">
@@ -218,7 +218,7 @@ export default function Boost() {
             <h1 className="text-white text-2xl">FREE</h1>
           </div>
           <div
-            className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center"
+            className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center hover:bg-indigo-400"
             onClick={handleMultiTap}
           >
             <span className="flex justify-center items-center">Go ahead</span>
@@ -237,7 +237,7 @@ export default function Boost() {
             <h1 className="text-white text-2xl">FREE</h1>
           </div>
           <div
-            className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center"
+            className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center hover:bg-indigo-400"
             onClick={handleLimit}
           >
             <span className="flex justify-center items-center">Go ahead</span>
