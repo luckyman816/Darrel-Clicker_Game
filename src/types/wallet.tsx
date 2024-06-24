@@ -6,6 +6,7 @@ export interface walletProfile {
     energy: number;
     tap: number;
     limit: number;
+    treasure_date: Date;
 }
 export interface walletStateProps {
     user: walletProfile;
