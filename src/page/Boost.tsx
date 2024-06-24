@@ -13,7 +13,7 @@ export default function Boost() {
   const [username, setUsername] = useState<string>(username_state)
   const [limit, setLimit] = useState<number>(limit_state)
   const [tap, setTap] = useState<number>(tap_state)
-  const [treasure_date, setTreasure_date] = useState<Date>(treasure_date_state)
+  const [treasure_date, setTreasure_date] = useState<Date>(new Date(treasure_date_state || ""))
   const [currentDateTime, setCurrentDateTime] = useState<Date>(new Date());
   useEffect(() => {
     const interval = setInterval(() => {
