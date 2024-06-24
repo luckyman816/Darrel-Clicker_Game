@@ -137,7 +137,7 @@ function Home() {
   console.log("imgStatus", imgStatus);
 
   return (
-    <div className=" mt-8 mb-20">
+    <div className=" mt-8 mb-10">
       <ToastContainer />
       <div className="flex justify-center items-center">
         <TonConnectButton />
