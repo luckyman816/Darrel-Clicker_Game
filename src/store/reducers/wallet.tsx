@@ -21,7 +21,7 @@ const initialState: walletStateProps = {
     energy: 0,
     tap: 1,
     limit: 1000,
-    treasure_date: new Date(),
+    treasure_date: "",
   },
   friend : false,
   users: [],
