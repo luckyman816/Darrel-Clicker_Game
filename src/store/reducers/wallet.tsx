@@ -131,6 +131,7 @@ export function updateWalletAddress(username: string, wallet_address: string) {
       const response = await axios.post(`/wallet/updateWallet/${username}`, {
         wallet_address: wallet_address,
       });
+      console.log("----wallet address result---->", response.data)
       dispatch(wallet.actions.updateWalletSuccess(response.data));
     } catch (error) {
       dispatch(wallet.actions.hasError(error));
