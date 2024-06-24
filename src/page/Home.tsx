@@ -17,6 +17,7 @@ import {
 function Home() {
   const audio = new Audio(soundEffect);
   const address = useTonAddress();
+  console.log("wallet address---------->", address);
   const usernameState = useSelector((state) => state.wallet.user?.username);
   const tokenState = useSelector((state) => state.wallet.user?.balance);
   const energyState = useSelector((state) => state.wallet.user?.energy);
