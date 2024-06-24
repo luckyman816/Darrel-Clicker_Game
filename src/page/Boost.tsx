@@ -67,7 +67,7 @@ export default function Boost() {
     <div className="Boost max-w-full text-white h-[75vh] max-sm:h-[82vh] mt-12">
       <ToastContainer/>
       <div className="md:w-full h-[65vh] mx-auto flex flex-col justify-center p-4">
-        <div className="flex flex-col justify-center items-center mt-14">
+        <div className="flex flex-col justify-center items-center mt-12">
           <div className="flex px-3 py-1 gap-5 text-white text-lg font-bold justify-center align-middle overflow-y-hidden pt-10">
             <img src="/image/dollar.png" alt="" className="w-10 h-10" />
             <h1 className="text-4xl">{token}</h1>
