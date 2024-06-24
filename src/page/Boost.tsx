@@ -1,6 +1,6 @@
 import { dispatch, useSelector } from "../store";
 import { toast, ToastContainer } from "react-toastify";
-import { updateEnergy, updateLimit, updateTap } from "../store/reducers/wallet";
+import { /*updateBalance,*/ updateChest, updateEnergy, updateLimit, updateTap } from "../store/reducers/wallet";
 import { useEffect, useState } from "react";
 import Modal from "../component/modal";
 import moment from "moment";
@@ -92,6 +92,14 @@ export default function Boost() {
   const handleCloseChestModal = () => {
     setIsChestModalOpen(false);
   };
+  const handleTreasureBox = () => {
+    // if(diffDays < 3){
+    //   toast.warning("The treasure box will be available after 3 days!");
+    // } else {
+    //   dispatch(updateBalance(username, token + 1000 * (diffDays/3)));
+    // }
+    dispatch(updateChest(username, moment()))
+  }
   return (
     <div className="Boost max-w-full text-white h-[75vh] max-sm:h-[82vh] mt-12">
       <ToastContainer />
@@ -190,7 +198,7 @@ export default function Boost() {
           </div>
           <div
             className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center"
-            onClick={handleMultiTap}
+            onClick={handleTreasureBox}
           >
             <span className="flex justify-center items-center">
               Receive Chest

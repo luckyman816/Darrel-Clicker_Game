@@ -5,7 +5,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // project imports
 import axios from "../../utils/api";
 import { dispatch } from "../index";
-
+import moment from "moment";
 // types
 import { walletStateProps } from "../../types/wallet";
 
@@ -154,6 +154,18 @@ export function updateBalance(username: string, balance: number) {
     try {
       const response = await axios.post(`/wallet/updateBalance/${username}`, {
         balance: balance,
+      });
+      dispatch(wallet.actions.updateWalletSuccess(response.data));
+    } catch (error) {
+      dispatch(wallet.actions.hasError(error));
+    }
+  };
+}
+export function updateChest(username: string, treasure_date: moment.Moment) {
+  return async () => {
+    try {
+      const response = await axios.post(`/wallet/updateChestDate/${username}`, {
+        treasure_date: treasure_date,
       });
       dispatch(wallet.actions.updateWalletSuccess(response.data));
     } catch (error) {
