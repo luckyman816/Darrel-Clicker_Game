@@ -22,6 +22,10 @@ export default function Boost() {
   const [currentDateTime, setCurrentDateTime] = useState<moment.Moment>(
     moment()
   );
+  const [day, setDay] = useState<number>(0)
+  const [hour,setHour] = useState<number>(0)
+  const [minute, setMinute] = useState<number>(0)
+  const [second, setSecond] = useState<number>(0)
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentDateTime(moment());
@@ -33,16 +37,17 @@ export default function Boost() {
     const dateDiff = treasure_date
       ? currentDateTime.diff(treasure_date, "seconds")
       : 0;
-    const diffDays = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
-    const diffHours = Math.floor(
+    setDay(Math.floor(dateDiff / (1000 * 60 * 60 * 24)));
+    setHour(Math.floor(
       (dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const diffMinutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
-    const diffSeconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
-    console.log(
-      `Difference: ${diffDays} days, ${diffHours} hours, ${diffMinutes} minutes, ${diffSeconds} seconds`
-    );
+    ));
+    setMinute(Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60)));
+    setSecond(Math.floor((dateDiff % (1000 * 60)) / 1000));
+
   }, [currentDateTime, treasure_date]);
+  console.log(
+    `Difference: ${day} days, ${hour} hours, ${minute} minutes, ${second} seconds`
+  );
   useEffect(() => {
     setToken(tokenState);
     setUsername(username_state);
