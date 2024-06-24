@@ -9,8 +9,9 @@
 }
 
 .loader div {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
+  border-radius: 8px;
   position: absolute;
   animation: move 4s infinite;
 }
