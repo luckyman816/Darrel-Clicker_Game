@@ -29,18 +29,20 @@ export default function Boost() {
 
     return () => clearInterval(interval);
   }, []);
-  const dateDiff = treasure_date
-    ? currentDateTime.diff(treasure_date, "seconds")
-    : 0;
-  const diffDays = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
-  const diffHours = Math.floor(
-    (dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const diffMinutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
-  const diffSeconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
-  console.log(
-    `Difference: ${diffDays} days, ${diffHours} hours, ${diffMinutes} minutes, ${diffSeconds} seconds`
-  );
+  useEffect(() => {
+    const dateDiff = treasure_date
+      ? currentDateTime.diff(treasure_date, "seconds")
+      : 0;
+    const diffDays = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
+    const diffHours = Math.floor(
+      (dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const diffMinutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const diffSeconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
+    console.log(
+      `Difference: ${diffDays} days, ${diffHours} hours, ${diffMinutes} minutes, ${diffSeconds} seconds`
+    );
+  }, []);
   useEffect(() => {
     setToken(tokenState);
     setUsername(username_state);
@@ -48,7 +50,6 @@ export default function Boost() {
     setTap(tap_state);
     setTreasure_date(treasure_date_state ? moment(treasure_date_state) : null);
   }, [tokenState, username_state, limit_state, tap_state, treasure_date_state]);
-  console.log("-----treasure_date💰🏆💪------>", treasure_date);
   const handleFullEnergy = () => {
     dispatch(updateEnergy(username, limit));
     toast.success("Successfully updated energy!");
