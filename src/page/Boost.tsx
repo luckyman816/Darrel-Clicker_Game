@@ -4,7 +4,6 @@ import { updateEnergy, updateLimit, updateTap } from "../store/reducers/wallet";
 import { useEffect, useState } from "react";
 import Modal from "../component/modal";
 import moment from "moment";
-import "moment-timezone";
 export default function Boost() {
   const tokenState = useSelector((state) => state.wallet.user?.balance);
   const username_state = useSelector((state) => state.wallet.user?.username);
