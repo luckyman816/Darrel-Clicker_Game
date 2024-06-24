@@ -67,10 +67,11 @@ export default function Boost() {
     <div className="Boost max-w-full text-white h-[75vh] max-sm:h-[82vh] mt-12">
       <ToastContainer/>
       <div className="md:w-full h-[65vh] mx-auto flex flex-col justify-center p-4">
-        <div className="flex flex-col justify-center items-center">
-          <div className="flex px-3 py-1 gap-5 text-white text-lg font-bold justify-center align-middle overflow-y-hidden">
+        <div className="flex flex-col justify-center items-center mt-14">
+          <div className="flex px-3 py-1 gap-5 text-white text-lg font-bold justify-center align-middle overflow-y-hidden pt-10">
             <img src="/image/dollar.png" alt="" className="w-10 h-10" />
             <h1 className="text-4xl">{token}</h1>
+            <h2 className="text-4xl">coins</h2>
           </div>
         </div>
         <hr className="my-3 border-[#363636] border-1" />
@@ -93,7 +94,7 @@ export default function Boost() {
         >
           <img src="/image/treasure.png" alt="" className="w-10 h-10" />
           <div className="flex flex-col">
-            <h3 className="text-2xl text-white">Chest</h3>
+            <h3 className="text-2xl text-white">Treasure Box</h3>
             <h3 className="text-xl text-[#a8a8a7]">3/3 available</h3>
           </div>
         </div>
@@ -142,8 +143,8 @@ export default function Boost() {
       <Modal isOpen={isChestModalOpen} onClose={handleCloseChestModal}>
         <div className="flex flex-col items-center align-middle gap-3">
           <img src="image/treasure.png" alt="" className=" w-12 h-12"/>
-          <h1 className="text-2xl text-white">Chest</h1>
-          <p className=" text-sm text-white">You can receive the Chest Coins +1000</p>
+          <h1 className="text-2xl text-white">Treasure Box</h1>
+          <p className=" text-sm text-white">You can receive the Chest Coins +1000 per 3 days</p>
           <div className="flex items-center">
             <img src="image/dollar.png" alt="" className=" w-14 h-14"/>
             <h1 className="text-white text-2xl">FREE</h1>
