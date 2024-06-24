@@ -13,7 +13,7 @@ export default function Boost() {
   const [username, setUsername] = useState<string>(username_state)
   const [limit, setLimit] = useState<number>(limit_state)
   const [tap, setTap] = useState<number>(tap_state)
-  const [treasure_date, setTreasure_date] = useState<string>(treasure_date_state)
+  const [treasure_date, setTreasure_date] = useState<Date>(treasure_date_state)
   useEffect(() => {
     setToken(tokenState)
     setUsername(username_state)
