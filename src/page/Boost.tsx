@@ -68,9 +68,6 @@ export default function Boost() {
       <ToastContainer/>
       <div className="md:w-full h-[65vh] mx-auto flex flex-col justify-center p-4">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-2xl mb-3  max-w-[500px] mx-auto text-start text-white flex justify-center">
-            Your Balance
-          </h1>
           <div className="flex px-3 py-1 gap-5 text-white text-lg font-bold justify-center align-middle overflow-y-hidden">
             <img src="/image/dollar.png" alt="" className="w-10 h-10" />
             <h1 className="text-4xl">{token}</h1>
@@ -86,8 +83,8 @@ export default function Boost() {
         >
           <img src="/image/icon/lightning.svg" alt="" className="w-10 h-10" />
           <div className="flex flex-col">
-            <h3 className="text-2xl text-white">Chest</h3>
-            <h3 className="text-xl text-[#a8a8a7]">3/3 available</h3>
+            <h3 className="text-2xl text-white">Full energy</h3>
+            <h3 className="text-xl text-[#a8a8a7]">6/6 available</h3>
           </div>
         </div>
         <div
@@ -96,8 +93,8 @@ export default function Boost() {
         >
           <img src="/image/treasure.png" alt="" className="w-10 h-10" />
           <div className="flex flex-col">
-            <h3 className="text-2xl text-white">Full energy</h3>
-            <h3 className="text-xl text-[#a8a8a7]">6/6 available</h3>
+            <h3 className="text-2xl text-white">Chest</h3>
+            <h3 className="text-xl text-[#a8a8a7]">3/3 available</h3>
           </div>
         </div>
         <div className="flex justify-start">
@@ -151,7 +148,7 @@ export default function Boost() {
             <img src="image/dollar.png" alt="" className=" w-14 h-14"/>
             <h1 className="text-white text-2xl">FREE</h1>
           </div>
-          <div className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center" onClick={handleMultiTap}><span className="flex justify-center items-center">Go ahead</span></div>
+          <div className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center" onClick={handleMultiTap}><span className="flex justify-center items-center">Receive Chest</span></div>
         </div>
       </Modal>
       <Modal isOpen={isTapModalOpen} onClose={handleCloseTapModal}>
