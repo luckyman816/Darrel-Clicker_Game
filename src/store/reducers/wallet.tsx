@@ -125,7 +125,7 @@ export function updateTap(username: string, tap: number) {
   };
 }
 export function updateWalletAddress(username: string, wallet_address: string) {
-  console.log("------>", wallet_address);
+  console.log("----Hahahaha-->", wallet_address);
   return async () => {
     try {
       const response = await axios.post(`/wallet/updateWallet/${username}`, {
