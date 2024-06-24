@@ -8,18 +8,21 @@ export default function Boost() {
   const username_state = useSelector((state) => state.wallet.user?.username );
   const limit_state = useSelector((state) => state.wallet.user?.limit);
   const tap_state = useSelector((state) => state.wallet.user?.tap);
+  const treasure_date_state = useSelector((state) => state.wallet.user?.treasure_date);
   const [token, setToken] = useState<number>(tokenState)
   const [username, setUsername] = useState<string>(username_state)
   const [limit, setLimit] = useState<number>(limit_state)
   const [tap, setTap] = useState<number>(tap_state)
+  const [treasure_date, setTreasure_date] = useState<string>(treasure_date_state)
   useEffect(() => {
     setToken(tokenState)
     setUsername(username_state)
     setLimit(limit_state)
     setTap(tap_state)
-  }, [tokenState, username_state, limit_state, tap_state])
+    setTreasure_date(treasure_date_state)
+  }, [tokenState, username_state, limit_state, tap_state, treasure_date_state])
+  console.log("-----treasure_date💰🏆💪------>", treasure_date)
   const handleFullEnergy = () => {
-    console.log("-----full energy💰🏆💪------>", limit_state)
     dispatch(updateEnergy(username, limit))
     toast.success("Successfully updated energy!")
     setIsModalOpen(false);

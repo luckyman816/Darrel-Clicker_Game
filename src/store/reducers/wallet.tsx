@@ -100,7 +100,6 @@ export function updateWallet(
   };
 }
 export function updateEnergy(username: string, energy: number) {
-  console.log("------>", energy);
   return async () => {
     try {
       const response = await axios.post(`/wallet/updateEnergy/${username}`, {
@@ -113,7 +112,6 @@ export function updateEnergy(username: string, energy: number) {
   };
 }
 export function updateTap(username: string, tap: number) {
-  console.log("------>", tap);
   return async () => {
     try {
       const response = await axios.post(`/wallet/updateTap/${username}`, {
@@ -126,7 +124,6 @@ export function updateTap(username: string, tap: number) {
   };
 }
 export function updateWalletAddress(username: string, wallet_address: string) {
-  console.log("----Hahahaha-->", wallet_address);
   return async () => {
     try {
       const response = await axios.post(`/wallet/updateWallet/${username}`, {
