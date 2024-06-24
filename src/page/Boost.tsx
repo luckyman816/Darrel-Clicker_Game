@@ -29,12 +29,12 @@ export default function Boost() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentDateTime(moment());
-      calculateDifference();
+      calculateDifference(moment());
     }, 1000);
 
     return () => clearInterval(interval);
   }, []);
-  const calculateDifference = () => {
+  const calculateDifference = (currentDateTime: moment.Moment) => {
     if (treasure_date) {
       const dateDiff = treasure_date
       ? currentDateTime.diff(treasure_date, 'seconds') : 0;
