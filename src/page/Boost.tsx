@@ -183,6 +183,7 @@ export default function Boost() {
           <p className=" text-sm text-white">
             You can receive the Chest Coins +1000 per 3 days
           </p>
+          <p>{diffDays} d {diffHours} h {diffMinutes} m {diffSeconds} s</p>
           <div className="flex items-center">
             <img src="image/dollar.png" alt="" className=" w-14 h-14" />
             <h1 className="text-white text-2xl">FREE</h1>
