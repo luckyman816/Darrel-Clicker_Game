@@ -36,7 +36,8 @@ export default function Boost() {
   }, []);
   const calculateDifference = () => {
     if (treasure_date) {
-      const dateDiff = currentDateTime.diff(treasure_date, 'seconds');
+      const dateDiff = treasure_date
+      ? currentDateTime.diff(treasure_date, 'seconds') : 0;
       setDiffDays(Math.floor(dateDiff / (60 * 60 * 24)));
       setDiffHours(Math.floor((dateDiff % (60 * 60 * 24)) / (60 * 60)));
       setDiffMinutes(Math.floor((dateDiff % (60 * 60)) / 60));
