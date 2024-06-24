@@ -13,6 +13,7 @@ import {
   updateWallet,
   updateEnergy,
   getWallet,
+  updateWalletAddress,
 } from "../store/reducers/wallet";
 function Home() {
   const audio = new Audio(soundEffect);
@@ -43,7 +44,9 @@ function Home() {
       });
     }
   }, []);
-  console.log("---Telegram info----->", username);
+  useEffect(() => {
+    dispatch(updateWalletAddress(username, address));
+  }, [address, username])
   useEffect(() => {
     setLimit(limitState);
   }, [limitState]);

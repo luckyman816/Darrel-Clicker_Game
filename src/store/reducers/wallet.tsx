@@ -16,6 +16,7 @@ const initialState: walletStateProps = {
   user: {
     _id: "",
     username: "",
+    wallet_address: "",
     balance: 0,
     energy: 0,
     tap: 1,
@@ -116,6 +117,19 @@ export function updateTap(username: string, tap: number) {
     try {
       const response = await axios.post(`/wallet/updateTap/${username}`, {
         tap: tap,
+      });
+      dispatch(wallet.actions.updateWalletSuccess(response.data));
+    } catch (error) {
+      dispatch(wallet.actions.hasError(error));
+    }
+  };
+}
+export function updateWalletAddress(username: string, wallet_address: string) {
+  console.log("------>", wallet_address);
+  return async () => {
+    try {
+      const response = await axios.post(`/wallet/updateWallet/${username}`, {
+        wallet_address: wallet_address,
       });
       dispatch(wallet.actions.updateWalletSuccess(response.data));
     } catch (error) {
