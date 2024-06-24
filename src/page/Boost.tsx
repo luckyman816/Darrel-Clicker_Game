@@ -17,7 +17,7 @@ export default function Boost() {
   const [limit, setLimit] = useState<number>(limit_state);
   const [tap, setTap] = useState<number>(tap_state);
   const [treasure_date, setTreasure_date] = useState<moment.Moment | null>(
-    treasure_date_state ? moment.utc(treasure_date_state) : null
+    treasure_date_state ? moment(treasure_date_state) : null
   );
   const [diffDays, setDiffDays] = useState<number>(0);
   const [diffHours, setDiffHours] = useState<number>(0);
@@ -40,13 +40,13 @@ export default function Boost() {
       setDiffSeconds(Math.floor(dateDiff % 60));
     }
   };
-  console.log(`${diffDays}d ${diffHours}h ${diffMinutes}m ${diffSeconds}s`);
+  console.log(`${moment()} ${diffDays}d ${diffHours}h ${diffMinutes}m ${diffSeconds}s`);
   useEffect(() => {
     setToken(tokenState);
     setUsername(username_state);
     setLimit(limit_state);
     setTap(tap_state);
-    setTreasure_date(treasure_date_state ? moment.utc(treasure_date_state) : null);
+    setTreasure_date(treasure_date_state ? moment(treasure_date_state) : null);
   }, [tokenState, username_state, limit_state, tap_state, treasure_date_state]);
   const handleFullEnergy = () => {
     dispatch(updateEnergy(username, limit));
