@@ -42,7 +42,7 @@ export default function Boost() {
     console.log(
       `Difference: ${diffDays} days, ${diffHours} hours, ${diffMinutes} minutes, ${diffSeconds} seconds`
     );
-  }, []);
+  }, [currentDateTime, treasure_date]);
   useEffect(() => {
     setToken(tokenState);
     setUsername(username_state);
