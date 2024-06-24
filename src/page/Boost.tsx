@@ -14,6 +14,20 @@ export default function Boost() {
   const [limit, setLimit] = useState<number>(limit_state)
   const [tap, setTap] = useState<number>(tap_state)
   const [treasure_date, setTreasure_date] = useState<Date>(treasure_date_state)
+  const [currentDateTime, setCurrentDateTime] = useState<Date>(new Date());
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+  const dateDiff = currentDateTime.getTime() - treasure_date.getTime();
+  const diffDays = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
+  const diffHours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const diffMinutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
+  const diffSeconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
+  console.log(`Difference: ${diffDays} days, ${diffHours} hours, ${diffMinutes} minutes, ${diffSeconds} seconds`)
   useEffect(() => {
     setToken(tokenState)
     setUsername(username_state)
