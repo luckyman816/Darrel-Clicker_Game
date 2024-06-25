@@ -161,7 +161,7 @@ function Home() {
           <img
             src="/image/white-house-back.png"
             alt=""
-            className="absolute z-[-1] left-0 top-[-50px] w-[266px] h-[488px]"
+            className="absolute z-10 left-0 top-[-50px] w-[266px] h-[488px]"
           />
           <div
             className={`relative bg-[url('/image/image.png')] rounded-full bg-cover z-50 w-[400px] h-[400px] max-sm:w-[280px] max-sm:h-[280px] z-10 ${
@@ -175,7 +175,7 @@ function Home() {
             onClick={handleTap}
           />
         </div>
-        <div className="flex flex-col justify-center items-center content-center ">
+        <div className="flex flex-col justify-center items-center content-center z-30">
           <div className="flex justify-around w-full align-middle gap-5">
             <h3 className="text-xl mb-2 text-white w-[15vw]">
               <span className="text-3xl ">
