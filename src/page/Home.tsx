@@ -161,7 +161,7 @@ function Home() {
           <img
             src="/image/white-house-back.jpg"
             alt=""
-            className="absolute z-10 left-0 top-[-50px] w-[266px] h-[488px] opacity-60"
+            className="absolute z-10 left-0 top-[-50px] w-[266px] h-[488px]"
           />
           <div
             className={`relative bg-[url('/image/image.png')] rounded-full bg-cover z-50 w-[400px] h-[400px] max-sm:w-[280px] max-sm:h-[280px] z-10 ${
