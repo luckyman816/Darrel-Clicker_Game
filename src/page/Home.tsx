@@ -159,7 +159,7 @@ function Home() {
         </div>
         <div>
           <img
-            src="/image/white-house.jpg"
+            src="/image/white-house-back.jpg"
             alt=""
             className="absolute z-10 left-0 top-[-50px] w-[266px] h-[488px] opacity-60"
           />
